@@ -21,7 +21,8 @@
         "non-price-per-hour.js"
       ],
       "matches": [
-        "https://aws.amazon.com/rds/*/pricing/"
+        "https://aws.amazon.com/rds/*/pricing/",
+        "https://aws.amazon.com/elasticache/pricing/*"
       ]
     }
   ]
