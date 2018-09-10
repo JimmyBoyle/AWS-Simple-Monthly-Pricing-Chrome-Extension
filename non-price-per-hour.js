@@ -22,45 +22,21 @@ function modifyTable() {
     }
     doneModify = true
 
-    /*
-    var fields = $('.aws-plc-content');
-    $.each(fields, function(index, value){
-        let table = value.children[0].children[0]
-        let thead = table.children[0]
-        let tr_test = thead.children[0]
-        console.log($(thead).find('Price Per Hour'))
-        
-        if ($(tr_test).find('Price Per Hour').length >0){
-            tr_test.innerHTML = tr_test.innerHTML + '<th>Price Per Month</th>'
-        }
-    })
-    */
-
    var table_headers = $('tr:contains("Price Per Hour")')
    $.each(table_headers, function(index, value){
-    value.innerHTML = value.innerHTML + '<th>Price Per Month</th>'
-    table = $(value.parentNode.parentNode)[0]
-    console.log(table)
-
-   })
-
-
-
-    
-    /*
-    const cells = Array.prototype.slice.call(document.querySelectorAll('tr[data-plc-offer-id] > td:last-child'), 0);
-    const pattern = new RegExp("^\\$(\\d+\\.\\d+) $");
-    //console.log(cells);
-    $.each(cells, function (index, value) {
-        var message = value.innerText;
-        let matches = pattern.exec(message);
-        if (matches != null && matches.length > 1) {
-            let cost = parseFloat(matches[1]);
-            let monthlyCost = (cost * 24 * 30.5).toFixed(2);
-            value.innerText = value.innerText + ' | $' + monthlyCost + ' per Month';
-        }
+       value.innerHTML = value.innerHTML + '<th>Price Per Month</th>';
+   });
+   var cells = table_headers.parent().parent().find('tr[data-plc-offer-id]');
+   var pattern = new RegExp("^\\$(\\d+\\.\\d+)$");
+   $.each(cells, function (index, value) {
+       var message = $(value).find('td:last-child')[0].innerText;
+       let matches = pattern.exec(message);
+       if (matches != null && matches.length > 1) {
+          let cost = parseFloat(matches[1]);
+          let monthlyCost = (cost * 24 * 30.5).toFixed(2);
+          value.innerHTML = value.innerHTML + '<td>$' + monthlyCost + '</td>';
+       }
     });
-    */
 }
 
 function error() {
