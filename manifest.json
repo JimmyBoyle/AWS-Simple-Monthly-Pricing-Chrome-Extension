@@ -18,11 +18,23 @@
     {
       "js": [
         "jquery-2.0.2.min.js",
+        "aurora.js"
+      ],
+      "matches": [
+        "https://aws.amazon.com/rds/aurora/pricing/"
+      ]
+    },
+    {
+      "js": [
+        "jquery-2.0.2.min.js",
         "non-price-per-hour.js"
       ],
       "matches": [
         "https://aws.amazon.com/rds/*/pricing/",
         "https://aws.amazon.com/elasticache/pricing/*"
+      ],
+      "exclude_matches":[
+        "https://aws.amazon.com/rds/aurora/pricing/"
       ]
     }
   ]
