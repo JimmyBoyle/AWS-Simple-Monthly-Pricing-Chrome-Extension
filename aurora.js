@@ -11,8 +11,8 @@ $('.aws-plc-content').on("DOMSubtreeModified", function () {
 
 function modifyTable() {
     if (!doneModify) {
-        let x = $(".aws-controls");
-        $.each(x, function (index, value) {
+        let buttons = $(".aws-controls");
+        $.each(buttons, function (index, value) {
             $($($(value).find('.button'))[0].children).click(function () {
 
                 if ($(this).attr('class') != "js-active") {
@@ -24,8 +24,8 @@ function modifyTable() {
         });
 
         
-        let x1 = $('.tab-title');
-        $.each(x1, function (index, value){
+        let down_arrows = $('.tab-title');
+        $.each(down_arrows, function (index, value){
             console.log(value)
             $(value).click(function() {
                 console.log("clicked")
