@@ -3,8 +3,6 @@ var timeoutHandle = window.setTimeout(error, 20 * 1000);
 var doneModify = false;
 
 $('.aws-plc-content').on("DOMSubtreeModified", function () {
-    console.log("jimmy is fuckckcckksdfl;jsdfj")
-
     if (!doneModify) {
         window.clearTimeout(timeoutHandle);
         timeoutHandle = window.setTimeout(modifyTable, 3 * 1000);
@@ -54,6 +52,3 @@ function modifyTable() {
 function error() {
     console.log("error loading table")
 }
-
-
-
